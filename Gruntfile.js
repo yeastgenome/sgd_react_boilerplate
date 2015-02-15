@@ -1,0 +1,40 @@
+"use strict";
+
+var SRC_PATH = "client";
+var BUILD_PATH = "build";
+
+module.exports = function (grunt) {
+
+  grunt.initConfig({
+
+    browserify: {
+    	build: {
+	        dest: BUILD_PATH + "/js/application.js",
+	        src: SRC_PATH + "/jsx/application.jsx",
+	        options: {
+	        	debug: true
+	        }	
+    	}
+    },
+
+    connect: {
+		server: {
+			options: {
+				port: 3000,
+				base: BUILD_PATH
+			}
+		}
+	},
+      
+    watch: {
+      files: ["client/jsx/**/*.jsx"],
+      tasks: ["browserify"]
+    }
+  });
+
+  grunt.loadNpmTasks("grunt-browserify");
+  grunt.loadNpmTasks("grunt-contrib-connect");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+
+  grunt.registerTask("default", ["browserify:build", "connect", "watch"]);
+};
