@@ -10,7 +10,7 @@ module.exports = function (grunt) {
     browserify: {
     	build: {
 	        dest: BUILD_PATH + "/js/application.js",
-	        src: SRC_PATH + "/jsx/application.jsx",
+	        src: SRC_PATH + "/jsx/app.jsx",
 	        options: {
 	        	debug: true
 	        }	
@@ -28,7 +28,8 @@ module.exports = function (grunt) {
       
     watch: {
       files: ["client/jsx/**/*.jsx"],
-      tasks: ["browserify"]
+      tasks: ["browserify"],
+      options: { livereload: true }
     }
   });
 
