@@ -1,4 +1,7 @@
 "use strict";
+grunt.loadNpmTasks("grunt-browserify");
+grunt.loadNpmTasks("grunt-contrib-connect");
+grunt.loadNpmTasks("grunt-contrib-watch");
 
 var SRC_PATH = "client";
 var BUILD_PATH = "build";
@@ -32,10 +35,6 @@ module.exports = function (grunt) {
       options: { livereload: true }
     }
   });
-
-  grunt.loadNpmTasks("grunt-browserify");
-  grunt.loadNpmTasks("grunt-contrib-connect");
-  grunt.loadNpmTasks("grunt-contrib-watch");
 
   grunt.registerTask("default", ["browserify:build", "connect", "watch"]);
 };

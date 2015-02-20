@@ -11,16 +11,11 @@
   "browserify-shim": {},
   "dependencies": {
     "underscore": "~1.5.1",
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
-    "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "compression": "*",
     "node-jsx": "*",
-    "react": "*",
-    "react-router": "*",
-    "newrelic": "1.11.4"
+    "react": "~0.12.2",
+    "react-router": "~0.12.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0rc7",
@@ -30,10 +25,8 @@
     "grunt-contrib-watch": "0.6.1",
     "grunt-contrib-sass": "~0.8.1",
     "browserify": "~2.3.0",
-    "grunt-express": "*",
     "browserify-shim": "*",
     "reactify": "*",
-    "chai": "~1.7.0",
     "backbone": "*",
     "jquery": "*"
   }
