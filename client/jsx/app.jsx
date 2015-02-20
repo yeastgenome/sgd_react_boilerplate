@@ -4,10 +4,25 @@ var EventEmitter = require('events').EventEmitter;
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var loadingEvents = new EventEmitter();
 
-// route handlers
+// require route handlers
 var PapersIndex = require("./routes/papers_index.jsx");
 var PaperShow = require("./routes/papers_show.jsx");
 
+// assign handlers to routes
+var routes = (
+  <Route name="papers" path="/" handler={App}>
+    {/* default */}
+    <DefaultRoute
+      name="index" handler={PapersIndex}
+    />
+    <Route
+      name="paper" path="papers/:id"
+      handler={PaperShow}
+    />
+  </Route>
+);
+
+// master wrapper component rendered to DOM by Router
 var App = React.createClass({
   getInitialState () {
     return { loading: false };
@@ -21,7 +36,6 @@ var App = React.createClass({
       // otherwise its fast enough to just wait for the
       // data to load
       timer = setTimeout(() => {
-      	console.log('loading')
         this.setState({ loading: true });
       }, 300);
     });
@@ -55,14 +69,7 @@ var App = React.createClass({
   }
 });
 
-
-var routes = (
-  <Route name="papers" path="/" handler={App}>
-    <DefaultRoute name="index" handler={PapersIndex}/>
-    <Route name="paper" path="papers/:id" handler={PaperShow}/>
-  </Route>
-);
-
+// assign router to wrapper component
 Router.run(routes, function (Handler) {
 	React.render(<Handler/>, document.getElementById("j-application"));
 });
