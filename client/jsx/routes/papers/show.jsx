@@ -10,15 +10,17 @@ var paper = {
   abstract: "a great abstract"
 };
 
-module.exports = React.createClass({
+var Show = React.createClass({
   render () {
     // var { paper } = this.props.data;
     return (
-    <div>
-      <p><Link to="papers">Back</Link></p>
-      <h1>{paper.title}</h1>
-      <p>{paper.abstract}</p>
-    </div>
+      <div>
+        <p><Link to="papers">Back</Link></p>
+        <h1>{paper.title}</h1>
+        <p>{paper.abstract}</p>
+      </div>
     );
   }
 });
+
+module.exports = Show;
