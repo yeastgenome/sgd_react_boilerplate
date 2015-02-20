@@ -1,5 +1,5 @@
 *.DS_Store
-build
+build/application.js
 node_modules/*
 npm-debug.log
 .sass-cache/*
