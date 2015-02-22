@@ -5,8 +5,10 @@ var EventEmitter = require('events').EventEmitter;
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var loadingEvents = new EventEmitter();
 
+
+
 // store
-var ApplicationStore = require("./routes/stores/application_store.jsx");
+var ApplicationStore = require("./store/application_store.jsx");
 var store = new ApplicationStore();
 // TEMP set fixtures
 store.setupFixtures();
