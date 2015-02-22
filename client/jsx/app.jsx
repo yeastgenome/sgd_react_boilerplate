@@ -19,7 +19,21 @@ var App = React.createClass({
   render () {
     return (
       <div>
-        <RouteHandler {...this.props}/>
+        <div className="row">
+          <div className="col-sm-3 main">
+            <ul className="nav nav-pills nav-stacked">
+              <li>
+                <Link to="index">Home</Link>
+              </li>
+              <li>
+                <Link to="papers">Papers</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-9 main">
+            <RouteHandler {...this.props}/>
+          </div>
+        </div>
       </div>
     );
   }
