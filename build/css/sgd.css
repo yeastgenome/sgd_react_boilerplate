@@ -1,3 +1,11 @@
 .application-row {
 	margin-top: 65px;
 }
+
+/* style */
+body {
+	font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+	font-family: 'Droid Serif', serif;
+}
