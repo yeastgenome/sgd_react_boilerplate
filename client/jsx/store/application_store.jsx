@@ -1,23 +1,8 @@
 var Backbone = require("backbone");
 
-// TEMP define store and model right here.
-var BaseModel = Backbone.Model.extend({
-});
-var BaseCollection = Backbone.Collection.extend({
-  model: BaseModel,
-
-  setFixtureData: function () {
-    this.set(
-      [
-        {
-          name: "ipsum"
-        },
-        {
-          name: "lorem"
-        }
-      ]
-    );
-  },
+var Paper = require("./models/paper.jsx");
+var PapersCollection = Backbone.Collection.extend({
+  model: Paper
 });
 
 module.exports = class ApplicationStore {
@@ -25,17 +10,16 @@ module.exports = class ApplicationStore {
     var _initValues = 
       [
         {
-          id: 1,
-          title: "A Good Title",
-          abstract: "Ipsum Lorem Bacon"
+          id: 16821,
+          title: "The RET1 gene of yeast encodes the second-largest su"
         },
         {
-          id: 2,
-          title: "A Good Title 2",
-          abstract: "Ipsum Lorem Bacon2"
+          id: 16822,
+          title: "Activation of the Saccharomyces cerevisiae filamentation/invasion pa"
         }
       ];
-    this.papers = new BaseCollection(_initValues);
+
+    this.papers = new PapersCollection(_initValues);
     return {
       success: true
     };
@@ -47,6 +31,10 @@ module.exports = class ApplicationStore {
 
   getPapers () {
     return this.papers;
+  }
+
+  setPaper (paper) {
+    return this.papers.add(paper, { merge: true });
   }
 }
 
