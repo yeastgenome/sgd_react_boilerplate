@@ -1,41 +1,27 @@
+"use strict";
 var Backbone = require("backbone");
-
 var Paper = require("./models/paper.jsx");
-var PapersCollection = Backbone.Collection.extend({
-  model: Paper
-});
+
+// private backbone collection
+var _papers = new Paper.Collection();
 
 module.exports = class ApplicationStore {
-  setupFixtures (bootstrappedData) {
-    var _initValues = 
-      [
-        {
-          id: 16821,
-          title: "The RET1 gene of yeast encodes the second-largest su"
-        },
-        {
-          id: 16822,
-          title: "Activation of the Saccharomyces cerevisiae filamentation/invasion pa"
-        }
-      ];
-
-    this.papers = new PapersCollection(_initValues);
+  setupPaperFixtures (bootstrappedData) {
+    _papers.addFixtures();
     return {
       success: true
     };
   }
 
   getPaper (id) {
-    return this.papers.get(id);
+    return _papers.get(id);
   }
 
   getPapers () {
-    return this.papers;
+    return _papers;
   }
 
   setPaper (paper) {
-    return this.papers.add(paper, { merge: true });
+    return _papers.add(paper, { merge: true });
   }
-}
-
-// module.exports = ApplicationStore;
+};

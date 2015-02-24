@@ -7,11 +7,9 @@ var Show = React.createClass({
 
   componentDidMount: function () {
       var paper = this._getPaper();
-      // TEMP set URL here
-      var _url = `http://www.yeastgenome.org/backend/reference/${paper.id}/overview?callback=?`;
-      paper.fetch({ url: _url }).then( err => {
+      paper.fetch().then( err => {
         this.props.store.setPaper(paper);
-        if (this.isMounted() this.forceUpdate();
+        if (this.isMounted()) this.forceUpdate();
       });
   },
 
