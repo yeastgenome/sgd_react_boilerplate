@@ -11,7 +11,7 @@ var Show = React.createClass({
       var _url = `http://www.yeastgenome.org/backend/reference/${paper.id}/overview?callback=?`;
       paper.fetch({ url: _url }).then( err => {
         this.props.store.setPaper(paper);
-        this.forceUpdate();
+        if (this.isMounted() this.forceUpdate();
       });
   },
 
