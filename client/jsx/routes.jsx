@@ -7,6 +7,7 @@ var { Route, DefaultRoute, RouteHandler, Link } = Router;
 var Index = require("./routes/index.jsx");
 var PapersIndex = require("./routes/papers/index.jsx");
 var PaperShow = require("./routes/papers/show.jsx");
+var PaperEdit = require("./routes/papers/edit.jsx");
 
 // define layout and yield to RouteHandler
 var App = React.createClass({
@@ -47,6 +48,10 @@ module.exports = (
     <Route
       name="paper" path="papers/:id"
       handler={PaperShow}
+    />
+    <Route
+      name="editPaper" path="papers/edit/:id"
+      handler={PaperEdit}
     />
   </Route>
 );

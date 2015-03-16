@@ -16,7 +16,11 @@ var Index = React.createClass({
   	var listNodes = this.props.store.getPapers()
   		.map( (d, i) => {
   			return <div key={"paperList" + i}>
-    			<Link to="paper" params={d}>{d.get("title")}</Link>
+          <span>
+      			<Link to="paper" params={d}>{d.get("title")}</Link>
+            <span> | </span>
+            <Link to="editPaper" params={d}>Edit</Link>
+          </span>
           <hr />
   			</div>;
   		});
