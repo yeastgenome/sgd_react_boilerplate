@@ -11,6 +11,7 @@ require("node-jsx").install({ harmony: true });
 var ApplicationStore = require("./client/jsx/store/application_store.jsx");
 // setup data store
 var store = new ApplicationStore();
+store.setupPaperFixtures();
 // define routes
 var routes = require("./client/jsx/routes.jsx");
  
