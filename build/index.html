@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>SGD</title>
+		<title>POLG</title>
 		<!-- CSS -->
 		<!-- TEMP static CSS -->
     <!-- google fonts -->
@@ -20,33 +20,50 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">SGD Curation Center</a>
+          <a class="navbar-brand" href="#">Human Portal</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="gene name, disease...">
+            <input type="submit" class="btn btn-info" value="Search">
+          </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
         </div>
       </div>
     </nav>
 
     <div class="container-fluid">
       <div class="row application-row">
-        <div class="col-sm-12 main">
+        <div class="col-sm-2">
+          <ul class="nav">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Sequence</a></li>
+            <li class="active">
+                <a href="#">Protein</a>
+                <ul class="nav">
+                    <li><a href="#">Sequence</a></li>
+                    <li><a href="#">Domains</a></li>
+                    <li><a href="#">Literature</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Gene Ontology</a></li>
+            <li><a href="#">Interactions</a></li>
+            <li><a href="#">Regulation</a></li>
+            <li><a href="#">Orthologs</a></li>
+            <li><a href="#">Literature</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-10 main">
 		    	<div id="j-application">
-						<h1>Loading ...</h1>
+						<h1>POLG</h1>
 					</div>
         </div>
       </div>
     </div>
 
 	<!-- JS -->
-	<script src="/js/application.js"></script>
   </body>
 </html>
