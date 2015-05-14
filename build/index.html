@@ -5,12 +5,15 @@
 		<!-- CSS -->
 		<!-- TEMP static CSS -->
     <!-- google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lato|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/sgd.css">
 	</head>
 	  <body>
 
+    <div class="logo-container">
+      <img src="img/human_portal_logo.png" class="human-portal-logo" />
+    </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -20,7 +23,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Human Portal</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
@@ -40,25 +42,159 @@
         <div class="col-sm-2">
           <ul class="nav sidebar-nav affix">
             <li><a href="#">Overview</a></li>
+            <li><a href="#">Disease</a></li>
             <li><a href="#">Sequence</a></li>
-            <li class="active">
-                <a href="#">Protein</a>
-                <ul class="nav">
-                    <li><a href="#">Sequence</a></li>
-                    <li><a href="#">Domains</a></li>
-                    <li><a href="#">Literature</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Gene Ontology</a></li>
-            <li><a href="#">Interactions</a></li>
-            <li><a href="#">Regulation</a></li>
             <li><a href="#">Orthologs</a></li>
+            <li><a href="#">Protein</a></li>
+            <li><a href="#">Function</a></li>
+            <li><a href="#">Interactions</a></li>
             <li><a href="#">Literature</a></li>
           </ul>
         </div>
         <div class="col-sm-10 main">
-		    	<div id="j-application">
+
+		    	<div id="j-application" class="application-content-container">
+            <!-- overview -->
 						<h1>POLG</h1>
+            <dl class="dl-horizontal">
+              <dt>Gene Symbol</dt>
+              <dd>POLG</dd>
+              <dt>ID</dt>
+              <dd>HGNC:9179</dd>
+              <dt>Protein Name</dt>
+              <dd>polymerase (DNA directed), gamma HGNC</dd>
+              <dt>Feature Type</dt>
+              <dd>ORF</dd>
+              <dt>Description</dt>
+              <dd>Human mitochondrial DNA polymerase gamma catalytic subunit; forms heterotrimeric complex with 2 accessory subunit; human ortholog POLG complements yeast mip1 mutant; mutations in human POLG associated with Alpers-Huttenlocher syndrome (AHS), progressive external ophthalmoplegia (PEO), parkinsonism, other mitochondrial diseases 2 3 4 5 6 7 8 9</dd>
+              <dt>Name Description</dt>
+              <dd>Polymerase Gamma</dd>
+            </dl>
+            <hr />
+
+            <!-- disease -->
+            <h3>Disease</h3>
+            <p>Showing 5 diseases</p>
+            <ul class="list-unstyled">
+              <li>
+                <a>PROGRESSIVE EXTERNAL OPHTHALMOPLEGIA WITH MITOCHONDRIAL DNA DELETIONS, AUTOSOMAL RECESSIVE; PEOB</a>
+                <dl class="dl-horizontal">
+                  <dt>Manifestations</dt>
+                  <dd>adult-onset of weakness of the external eye muscles and exercise intolerance; may include cataracts, hearing loss, sensory axonal neuropathy, ataxia, depression, hypogonadism, and parkinsonism.</dd>
+                  <dt>Identifier</dt>
+                  <dd><a>258450</a></dd>
+                </dl>
+              </li>
+              <li>
+                <a>SENSORY ATAXIC NEUROPATHY, DYSARTHRIA, AND OPHTHALMOPARESIS; SANDO </a>
+                <dl class="dl-horizontal">
+                  <dt>Manifestations</dt>
+                  <dd>mitochondrial depletion in skeletal muscle and peripheral nerve tissue; clinical triad of symptoms consists of sensory ataxic neuropathy, dysarthria, and ophthalmoparesis; may also include myopathy, seizures, and hearing loss</dd>
+                  <dt>Identifier</dt>
+                  <dd><a>607459</a></dd>
+                </dl>
+              </li>
+              <li>
+                <a>PROGRESSIVE EXTERNAL OPHTHALMOPLEGIA WITH MITOCHONDRIAL DNA DELETIONS, AUTOSOMAL RECESSIVE; PEOB</a>
+                <dl class="dl-horizontal">
+                  <dt>Manifestations</dt>
+                  <dd>adult-onset of weakness of the external eye muscles and exercise intolerance; may include cataracts, hearing loss, sensory axonal neuropathy, ataxia, depression, hypogonadism, and parkinsonism.</dd>
+                  <dt>Identifier</dt>
+                  <dd><a>613662</a></dd>
+                </dl>
+              </li>
+              <li>
+                <a>PROGRESSIVE EXTERNAL OPHTHALMOPLEGIA WITH MITOCHONDRIAL DNA DELETIONS, AUTOSOMAL DOMINANT, 1; PEOA1 </a>
+                <dl class="dl-horizontal">
+                  <dt>Manifestations</dt>
+                  <dd>progressive weakness of ocular muscles and levator muscle of the upper eyelid. In a minority of cases, it is associated with skeletal myopathy, which predominantly involves axial or proximal muscles and which causes abnormal fatigability and even permanent muscle weakness.</dd>
+                  <dt>Identifier</dt>
+                  <dd><a>157640</a></dd>
+                </dl>
+              </li>
+              <li>
+                <a>MITOCHONDRIAL DNA DEPLETION SYNDROME 4A (ALPERS TYPE); MTDPS4A</a>
+                <dl class="dl-horizontal">
+                  <dt>Manifestations</dt>
+                  <dd>autosomal recessive hepatocerebral syndrome due to mitochondrial dysfunction; severe developmental delay, intractable seizures, liver failure, childhood death.</dd>
+                  <dt>Identifier</dt>
+                  <dd><a>203700</a></dd>
+                </dl>
+              </li>                            
+            </ul>
+            <p>External Links: <a>DOID</a> | <a>OMIM</a></p>
+            <hr />
+
+            <!-- sequence -->
+            <h3>Sequence</h3>
+            <img src="img/seq1.png" />
+            <img src="img/seq2.png" />
+            <br />
+            <br />
+            <p>External Links: <a>Entrez Gene</a> | <a>Ensembl</a> | <a>UCSC</a> | <a>RefSeq</a></p>
+            <hr />
+
+            <!-- orthologs -->
+            <h3>Orthologs</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Organism</th>
+                  <th>Gene Name</th>
+                  <th>ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mus musculus</td>
+                  <td>Polg</td>
+                  <td><a>MGI:1196389</a></td>
+                </tr>
+                <tr>
+                  <td>Rattus norvegicus</td>
+                  <td>Polg</td>
+                  <td><a>RGD:620057</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>External Links: <a>Ensembl</a> | <a>OrthoDB</a> | <a>PhylomeDB</a> | <a>InParanoid</a></p>            
+            <hr />
+
+            <!-- protein -->
+            <h3>Protein</h3>
+            <dl class="dl-horizontal">
+              <dt>Preferred Names</dt>
+              <dd>DNA polymerase subunit gamma-1</dd>
+              <dt>Other Names</dt>
+              <dd>PolG-alpha, mitochondrial DNA polymerase catalytic subunit</dd>
+            </dl>
+
+            <h4>Sequence</h4>
+            <p class="bio-sequence">
+MSRLLWRKVAGATVGPGPVPAPGRWVSSSVPASDPSDGQRRRQQQQQQQQQQQQQPQQPQVLSSEGGQLRHNPLDIQMLSRGLHEQIFGQGGEMPGEAAVRRSVEHLQKHGLWGQPAVPLPDVELRLPPLYGDNLDQHFRLLAQKQSLPYLEAANLLLQAQLPPKPPAWAWAEGWTRYGPEGEAVPVAIPEERALVFDVEVCLAEGTCPTLAVAISPSAWYSWCSQRLVEERYSWTSQLSPADLIPLEVPTGASSPTQRDWQEQLVVGHNVSFDRAHIREQYLIQGSRMRFLDTMSMHMAISGLSSFQRSLWIAAKQGKHKVQPPTKQGQKSQRKARRGPAISSWDWLDISSVNSLAEVHRLYVGGPPLEKEPRELFVKGTMKDIRENFQDLMQYCAQDVWATHEVFQQQLPLFLERCPHPVTLAGMLEMGVSYLPVNQNWERYLAEAQGTYEELQREMKKSLMDLANDACQLLSGERYKEDPWLWDLEWDLQEFKQKKAKKVKKEPATASKLPIEGAGAPGDPMDQEDLGPCSEEEEFQQDVMARACLQKLKGTTELLPKRPQHLPGHPGWYRKLCPRLDDPAWTPGPSLLSLQMRVTPKLMALTWDGFPLHYSERHGWGYLVPGRRDNLAKLPTGTTLESAGVVCPYRAIESLYRKHCLEQGKQQLMPQEAGLAEEFLLTDNSAIWQTVEELDYLEVEAEAKMENLRAAVPGQPLALTARGGPKDTQPSYHHGNGPYNDVDIPGCWFFKLPHKDGNSCNVGSPFAKDFLPKMEDGTLQAGPGGASGPRALEINKMISFWRNAHKRISSQMVVWLPRSALPRAVIRHPDYDEEGLYGAILPQVVTAGTITRRAVEPTWLTASNARPDRVGSELKAMVQAPPGYTLVGADVDSQELWIAAVLGDAHFAGMHGCTAFGWMTLQGRKSRGTDLHSKTATTVGISREHAKIFNYGRIYGAGQPFAERLLMQFNHRLTQQEAAEKAQQMYAATKGLRWYRLSDEGEWLVRELNLPVDRTEGGWISLQDLRKVQRETARKSQWKKWEVVAERAWKGGTESEMFNKLESIATSDIPRTPVLGCCISRALEPSAVQEEFMTSRVNWVVQSSAVDYLHLMLVAMKWLFEEFAIDGRFCISIHDEVRYLVREEDRYRAALALQITNLLTRCMFAYKLGLNDLPQSVAFFSAVDIDRCLRKEVTMDCKTPSNPTGMERRYGIPQGEALDIYQIIELTKGSLEKRSQPGP
+            </p>
+
+            <h4>Domains</h4>
+            <img src="img/domains1.png" />
+            <p>External Links: <a>Gene3D</a> | <a>InterPro</a> | <a>PANTHER</a> | <a>Pfam</a> | <a>SMART</a> | <a>PROSITE</a> | <a>PRINTS</a></p>
+            <hr />
+
+            <!-- function -->
+            <h3>Function</h3>
+            <img src="img/function1.png" />
+            <p>External Links: <a>UniProtKB</a> | <a>Ensembl</a> | <a>QuickGO</a> | <a>AmiGO</a></p>
+            <hr />
+
+            <!-- interactions -->
+            <h3>Interactions</h3>
+            <img src="img/interactions1.png" />
+            <hr />
+
+            <!-- literature -->
+            <h3>Literature</h3>
+            <span>PubMed</span>
+
 					</div>
         </div>
       </div>
