@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .application-content-container {
-	margin-top: -12px;
+	margin-top: 1rem;
 }
 
 .bio-sequence {

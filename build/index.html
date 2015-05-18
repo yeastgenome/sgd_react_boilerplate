@@ -39,12 +39,13 @@
 
     <div class="container-fluid">
       <div class="row application-row">
-        <div class="col-sm-2 hidden-sm">
+        <div class="col-sm-2 hidden-sm hidden-xs">
           <ul class="nav sidebar-nav affix">
             <li><a href="#">Overview</a></li>
+            <li><a href="#">Orthologs</a></li>
             <li><a href="#">Disease</a></li>
             <li><a href="#">Sequence</a></li>
-            <li><a href="#">Orthologs</a></li>
+          
             <li><a href="#">Protein</a></li>
             <li><a href="#">Function</a></li>
             <li><a href="#">Interactions</a></li>
@@ -54,6 +55,13 @@
         <div class="col-sm-10 main">
 
 		    	<div id="j-application" class="application-content-container">
+            <!-- message pannel -->
+            <div class="panel panel-info">
+              <div class="panel-body">
+                <span class="glyphicon glyphicon-info-sign"></span> This page is conceptual, and data may not be accurate.
+              </div>
+            </div>
+
             <!-- overview -->
 						<h1>POLG</h1>
             <dl class="dl-horizontal">
@@ -66,10 +74,57 @@
               <dt>Feature Type</dt>
               <dd>ORF</dd>
               <dt>Description</dt>
-              <dd>Human mitochondrial DNA polymerase gamma catalytic subunit; forms heterotrimeric complex with 2 accessory subunit; human ortholog POLG complements yeast mip1 mutant; mutations in human POLG associated with Alpers-Huttenlocher syndrome (AHS), progressive external ophthalmoplegia (PEO), parkinsonism, other mitochondrial diseases 1 2 3 4 5 6 7 8</dd>
+              <dd>Human mitochondrial DNA polymerase gamma catalytic subunit; forms heterotrimeric complex with 2 accessory subunit; human ortholog POLG complements yeast mip1 mutant; mutations in human POLG associated with Alpers-Huttenlocher syndrome (AHS), progressive external ophthalmoplegia (PEO), parkinsonism, other mitochondrial diseases <sup>1 2 3 4 5 6 7 8</sup></dd>
               <dt>Name Description</dt>
               <dd>Polymerase Gamma</dd>
             </dl>
+            <hr />
+
+            <!-- orthologs -->
+            <h3>Orthologs</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Organism</th>
+                  <th>Gene Name</th>
+                  <th>ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i>Saccharomyces cerevisiae</i> (budding yeast)</td>
+                  <td>MIP1</td>
+                  <td><a>SGD:S000005857</a></td>
+                </tr>
+                <tr>
+                  <td><i>Caenorhabditis elegans</i> (roundworm)</td>
+                  <td>POLG-1</td>
+                  <td><a>WORMBASE:WP:CE25501</a></td>
+                </tr>
+                <tr>
+                  <td><i>Drosophila melanogaster</i> (fruit fly)</td>
+                  <td>polg</td>
+                  <td><a>ZFIN:ZDB-GENE-060303-1</a></td>
+                </tr>
+                <tr>
+                  <td><i>Danio rerio</i> (zebrafish)</td>
+                  <td>tam</td>
+                  <td><a>FLYBASE:FBgn0004406</a></td>
+                </tr>
+                <tr>
+                  <td><i>Mus musculus</i> (house mouse)</td>
+                  <td>Polg</td>
+                  <td><a>MGI:1196389</a></td>
+                </tr>
+                <tr>
+                  <td><i>Rattus norvegicuss</i> (Norway rat)</td>
+                  <td>Polg</td>
+                  <td><a>RGD:620057</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>External Links: <a>Ensembl</a> | <a>OrthoDB</a> | <a>PhylomeDB</a> | <a>InParanoid</a></p>            
             <hr />
 
             <!-- disease -->
@@ -132,33 +187,6 @@
             <br />
             <br />
             <p>External Links: <a>Entrez Gene</a> | <a>Ensembl</a> | <a>UCSC</a> | <a>RefSeq</a></p>
-            <hr />
-
-            <!-- orthologs -->
-            <h3>Orthologs</h3>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Organism</th>
-                  <th>Gene Name</th>
-                  <th>ID</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Mus musculus</td>
-                  <td>Polg</td>
-                  <td><a>MGI:1196389</a></td>
-                </tr>
-                <tr>
-                  <td>Rattus norvegicus</td>
-                  <td>Polg</td>
-                  <td><a>RGD:620057</a></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p>External Links: <a>Ensembl</a> | <a>OrthoDB</a> | <a>PhylomeDB</a> | <a>InParanoid</a></p>            
             <hr />
 
             <!-- protein -->
