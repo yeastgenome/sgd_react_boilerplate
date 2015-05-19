@@ -26,6 +26,7 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "0.6.1",
     "grunt-contrib-sass": "~0.8.1",
+    "grunt-express": "~1.0",
     "browserify": "~2.3.0",
     "browserify-shim": "*",
     "reactify": "*",

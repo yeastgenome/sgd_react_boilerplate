@@ -4,13 +4,10 @@ var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 module.exports = React.createClass({
 	render () {
-		var gene = {
-			id: 1
-		};
 		return (
-			<div>
-				<h1>#Index</h1>
-				 <Link to="gene" params={gene}>Exmple Gene</Link>
+			<div className="s-404">
+				<h1>404</h1>
+				<p>Sorry, not found.</p>
 			</div>
 		);
 	}

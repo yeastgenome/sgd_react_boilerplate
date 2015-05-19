@@ -1,12 +1,12 @@
 "use strict";
 var React = require('react');
 var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
+var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
 
 // require route handlers
 var Index = require("./routes/index.jsx");
-var PapersIndex = require("./routes/papers/index.jsx");
-var PaperShow = require("./routes/papers/show.jsx");
+var GeneShow = require("./routes/genes/show.jsx");
+var NotFound = require("./routes/not_found.jsx");
 
 // define layout and yield to RouteHandler
 var App = React.createClass({
@@ -18,9 +18,6 @@ var App = React.createClass({
             <ul className="nav nav-pills nav-stacked">
               <li>
                 <Link to="index">Home</Link>
-              </li>
-              <li>
-                <Link to="papers">Papers</Link>
               </li>
             </ul>
           </div>
@@ -41,12 +38,9 @@ module.exports = (
       name="index" handler={Index}
     />
     <Route
-      name="papers" path="papers"
-      handler={PapersIndex}
+      name="gene" path="gene/:id"
+      handler={GeneShow}
     />
-    <Route
-      name="paper" path="papers/:id"
-      handler={PaperShow}
-    />
+    <NotFoundRoute handler={NotFound}/>
   </Route>
 );

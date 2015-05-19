@@ -17,14 +17,14 @@ module.exports = function (grunt) {
     	}
     },
 
-    connect: {
-		server: {
-			options: {
-				port: 3000,
-				base: BUILD_PATH
-			}
-		}
-	},
+    express: {
+  		dev: {
+        options: {
+          port: 3000,
+          server: "./server_instance.js"  
+        }
+      }
+  	},
       
     watch: {
       files: ["client/jsx/**/*.jsx"],
@@ -36,6 +36,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-browserify");
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-express");
 
-  grunt.registerTask("default", ["browserify:build", "connect", "watch"]);
+  grunt.registerTask("default", ["express:dev", "watch"]);
 };

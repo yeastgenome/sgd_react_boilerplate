@@ -1,27 +1,19 @@
 "use strict";
 var Backbone = require("backbone");
-var Paper = require("./models/paper.jsx");
+var Gene = require("./models/gene.jsx");
 
 // private backbone collection
-var _papers = new Paper.Collection();
+var _genes = new Gene.Collection();
 
 module.exports = class ApplicationStore {
-  setupPaperFixtures (bootstrappedData) {
-    _papers.addFixtures();
+  setupGeneFixtures (bootstrappedData) {
+    _genes.addFixtures();
     return {
       success: true
     };
   }
 
-  getPaper (id) {
-    return _papers.get(id);
-  }
-
-  getPapers () {
-    return _papers;
-  }
-
-  setPaper (paper) {
-    return _papers.add(paper, { merge: true });
+  getGene (id) {
+    return _genes.get(id);
   }
 };

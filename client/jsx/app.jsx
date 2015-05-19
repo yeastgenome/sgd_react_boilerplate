@@ -2,8 +2,9 @@
 var React = require('react');
 var Router = require('react-router');
 var EventEmitter = require('events').EventEmitter;
-var { Route, DefaultRoute, RouteHandler, Link } = Router;
-var loadingEvents = new EventEmitter();
+var { HistoryLocation, Route, DefaultRoute, RouteHandler, Link } = Router;
+// ? where does this go
+var eventEmitter = new EventEmitter();
 
 // store
 var ApplicationStore = require("./store/application_store.jsx");
@@ -13,9 +14,9 @@ var routes = require("./routes.jsx");
 // setup data store
 var store = new ApplicationStore();
 // TEMP set fixtures
-store.setupPaperFixtures();
+store.setupGeneFixtures();
 
 // run application with defined routes, pass it store as property
-Router.run(routes, function (Handler) {
+Router.run(routes,  HistoryLocation, function (Handler) {
 	React.render(<Handler store={store}/>, document.getElementById("j-application"));
 });
