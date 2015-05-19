@@ -9,20 +9,42 @@ var GeneShow = require("./routes/genes/show.jsx");
 var NotFound = require("./routes/not_found.jsx");
 
 // define layout and yield to RouteHandler
+
 var App = React.createClass({
   render () {
     return (
       <div>
-        <div className="row">
-          <div className="col-sm-3 main">
-            <ul className="nav nav-pills nav-stacked">
-              <li>
-                <Link to="index">Home</Link>
-              </li>
-            </ul>
+        <div className="logo-container">
+          <img src="/assets/img/human_portal_logo.png" className="human-portal-logo" />
+        </div>
+        <nav className="navbar navbar-inverse navbar-fixed-top">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" className="navbar-collapse collapse">
+              <form className="navbar-form navbar-right">
+                <input type="text" className="form-control search-textbar" placeholder="gene name, disease..." />
+                <input type="submit" className="btn btn-info" value="Search" />
+              </form>
+              <ul className="nav navbar-nav navbar-right">
+                <li><a href="#"><span className="glyphicon glyphicon-info-sign"></span> About</a></li>
+                <li><a href="#"><span className="glyphicon glyphicon-question-sign"></span> Help</a></li>
+              </ul>
+            </div>
           </div>
-          <div className="col-sm-9 main">
-            <RouteHandler {...this.props}/>
+        </nav>
+
+        <div className="container-fluid">
+          <div className="row application-row">
+            <div className="col-sm-12">
+              <RouteHandler {...this.props}/>
+            </div>
           </div>
         </div>
       </div>
