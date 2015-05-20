@@ -5,8 +5,7 @@ var url = require("url");
 var INDEX_NAME = "search-dev2";
 
 var client = new elasticsearch.Client({
-	host: "localhost:9200",
-	log: "trace"
+	host: "localhost:9200"
 });
 
 var API = express();
@@ -34,7 +33,6 @@ API.get("/gene/:id", function (req, res, next) {
 			return res.send(error.message)
 		});
 });
-
 
 API.get("/search", function (req, res, next) {
 	var urlParts = url.parse(req.url, true);

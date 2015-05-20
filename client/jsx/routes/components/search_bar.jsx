@@ -7,8 +7,8 @@ var SearchBar = React.createClass({
 
 	render: function () {
 		return (
-			<form onSubmit={this._onSubmit} className="navbar-form navbar-right">
-				<input ref="searchTextBar" type="text" className="form-control search-textbar" placeholder="gene name, disease..." />
+			<form onSubmit={this._onSubmit} className="navbar-form navbar-right" action="/search">
+				<input ref="searchTextBar" type="text" className="form-control search-textbar" placeholder="gene name, disease..." name="q"/>
 				<input type="submit" className="btn btn-info" value="Search" />
 			</form>
 		);

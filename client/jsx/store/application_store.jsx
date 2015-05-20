@@ -1,10 +1,9 @@
 "use strict";
 var Backbone = require("backbone");
 var Gene = require("./models/gene.jsx");
+var popsicle = require("popsicle");
 
 var $ = require("jquery");
-
-var SEARCH_BASE_URL = "/api/search";
 
 // private data
 var _genes = new Gene.Collection();
@@ -13,6 +12,24 @@ var _totalResults = 0;
 var _query = "";
 
 module.exports = class ApplicationStore {
+
+  constructor (options) {
+    options = options || {};
+    this.baseUrl = options.baseUrl || "/api/";
+  }
+
+  // given the url, fetch everything needed to render that page on server (or before client js takes over)
+  // callback(err)
+  primeFromUrl (url, callback) {
+    // gene show
+    if (url.match(/gene\//)) {
+      var id = url.split("/gene/")[1];
+      return this.fetchItem(id, callback);
+    // search
+    }
+    if (typeof callback === "function") return callback(null);
+  }
+
   setupGeneFixtures (bootstrappedData) {
     _genes.addFixtures();
     return {
@@ -27,11 +44,12 @@ module.exports = class ApplicationStore {
       if (existing) {
         return callback(null, existing);
       } else {
-        var url = "/api/gene/" + id;
-        $.getJSON(url, data => {
+        var url = this.baseUrl + "gene/" + id;
+        popsicle(url).then( res => {
+            var data = res.body;
             _genes.push(data);
             return callback(null, data);
-        })
+        });
       }
     }
   }
@@ -39,17 +57,18 @@ module.exports = class ApplicationStore {
   getGene (id) {
     return _genes.get(id);
   }
-
+  
   // callback(err, results)
   fetchSearchResults (callback) {
-  	var url = SEARCH_BASE_URL + "?q=" + _query;
-  	$.getJSON(url, data => {
+  	var url = this.baseUrl + "search?q=" + _query;
+  	popsicle(url).then( res => {
+      var data = res.body
   		_searchResults = data.results;
   		_totalResults = data.total;
       // build results to collection
       _genes.add(data.results);
   		if (typeof callback === "function") callback(null, data);
-  	})
+  	});
   }
 
   getSearchResults () {
