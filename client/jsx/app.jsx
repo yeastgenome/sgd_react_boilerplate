@@ -14,7 +14,9 @@ var routes = require("./routes.jsx");
 
 // setup data store
 var store = new ApplicationStore();
-store.primeFromUrl(window.location.pathname, err => {
+
+var currentUrl = window.location.pathname + window.location.search;
+store.primeFromUrl(currentUrl, err => {
 	// run application with defined routes, pass it store as property
 	Router.run(routes,  HistoryLocation, function (Handler) {
 		React.render(<Handler store={store}/>, document.getElementById("j-application"));

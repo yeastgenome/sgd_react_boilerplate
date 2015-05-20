@@ -26,6 +26,12 @@ module.exports = class ApplicationStore {
       var id = url.split("/gene/")[1];
       return this.fetchItem(id, callback);
     // search
+    } else if (url.match(/search/)) {
+      var paramUrl = url.replace(/\/search/, "");
+      var queryObj = this._getQueryParams(paramUrl);
+      var _query = queryObj.q || "";
+      this.setQuery(_query);
+      return this.fetchSearchResults(callback);
     }
     if (typeof callback === "function") return callback(null);
   }
@@ -57,7 +63,7 @@ module.exports = class ApplicationStore {
   getGene (id) {
     return _genes.get(id);
   }
-  
+
   // callback(err, results)
   fetchSearchResults (callback) {
   	var url = this.baseUrl + "search?q=" + _query;
@@ -85,5 +91,24 @@ module.exports = class ApplicationStore {
 
   setQuery (query) {
     _query  = query;
+  }
+
+  _getQueryParams (queryString) {
+    var queryStr = queryString.substring(1);
+    var paramDict = {};
+    if (queryStr) {
+      var params = queryStr.split('&');
+      for (var i = 0; i < params.length; i++) {
+        var pair = params[i].split('=');
+        var key = pair[0];
+        var value = pair[1].replace(/\+/g, ' ');
+        if (paramDict[key]) {
+          paramDict[key] = paramDict[key] + ' ' + value;
+        } else {
+          paramDict[key] = value;
+        }
+      }
+    }
+    return paramDict;
   }
 };
