@@ -28,7 +28,15 @@ def index_loci():
 			'name': name,
 			'category': 'locus',
 			'url': locus['link'],
-			'description': locus['headline']
+			'description': locus['headline'],
+			'overview': {
+				'Gene Symbol': name,
+				'ID': locus['sgdid'],
+				'Protein Name': 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.', # TEMP lorem
+				'Feature Type': 'ORF',
+				'Description': locus['headline'],
+				'Name Description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+			}
 		}
 		
 		es.index(index=INDEX_NAME, doc_type='searchableItem', id=locus['sgdid'], body=body)

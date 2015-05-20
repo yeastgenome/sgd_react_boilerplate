@@ -24,7 +24,8 @@ API.get("/gene/:id", function (req, res, next) {
 				name: d.name,
 				url: d.url,
 				description: d.description,
-				category: "gene"
+				category: "gene",
+				overview: d.overview
 			} 
 
 			return res.send(result);
@@ -73,7 +74,8 @@ API.get("/search", function (req, res, next) {
 					name: source.name,
 					url: source.url,
 					description: source.description,
-					category: "gene"
+					category: "gene",
+					overview: source.overview
 				}
 			});
 			return res.send({

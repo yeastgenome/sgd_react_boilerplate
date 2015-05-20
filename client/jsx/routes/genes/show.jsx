@@ -1,17 +1,12 @@
 var React = require("react");
-var Router = require('react-router');
+var Router = require("react-router");
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
+var _ = require("underscore");
 
 var Show = React.createClass({
   mixins: [Router.State],
 
   render: function () {
-    var _id = this.getParams()._id;
-    var gene = this._getGene(_id);
-
-    if (!gene) {
-      return null;
-    }
     return (
       <div className="row">
         <div className="col-sm-2 hidden-sm hidden-xs">
@@ -28,7 +23,12 @@ var Show = React.createClass({
           </ul>
         </div>
         <div className="col-sm-10 main">
-          <h1>{gene.get("name")}</h1>
+          <div className="panel panel-info">
+            <div className="panel-body">
+              <span className="glyphicon glyphicon-info-sign"></span>  This page is conceptual and under development; links may not be active.
+            </div>
+          </div>
+          {this._getOverviewNode()}
         </div>
       </div>
     );
@@ -39,6 +39,33 @@ var Show = React.createClass({
     this.props.store.fetchItem(_id, (err, data) => {
       if (this.isMounted()) this.forceUpdate();
     })
+  },
+
+  _getOverviewNode: function () {
+    var _id = this.getParams()._id;
+    var gene = this._getGene(_id);
+
+    if (!gene) {
+      return null;
+    }
+
+    var metaData = gene.get("overview");
+    var overviewNodes = [];
+    var i = 0;
+    for (key in metaData) {
+      overviewNodes.push(<dt key={"overviewKey" + i}>{key}</dt>);
+      overviewNodes.push(<dd key={"overviewValye" + i}>{metaData[key]}</dd>);
+      i++;
+    }
+
+    return (
+      <div>
+        <h1>{gene.get("name")}</h1>
+        <dl className="dl-horizontal">
+          {overviewNodes}
+        </dl>
+      </div>
+    );
   },
 
   _getGene: function (id) {
