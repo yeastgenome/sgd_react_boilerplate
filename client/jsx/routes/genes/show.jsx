@@ -6,7 +6,12 @@ var Show = React.createClass({
   mixins: [Router.State],
 
   render: function () {
-    var gene = this._getGene();
+    var _id = this.getParams()._id;
+    var gene = this._getGene(_id);
+
+    if (!gene) {
+      return null;
+    }
     return (
       <div>
         <h1>{gene.get("name")}</h1>
@@ -14,9 +19,16 @@ var Show = React.createClass({
     );
   },
 
-  _getGene: function () {
+  componentDidMount: function () {
+    var _id = this.getParams()._id;
+    this.props.store.fetchItem(_id, (err, data) => {
+      if (this.isMounted()) this.forceUpdate();
+    })
+  },
+
+  _getGene: function (id) {
     // temp fake gene
-    return this.props.store.getGene(1);
+    return this.props.store.getGene(id);
   }
 
 });

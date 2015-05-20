@@ -13,8 +13,6 @@ var routes = require("./routes.jsx");
 
 // setup data store
 var store = new ApplicationStore();
-// TEMP set fixtures
-store.setupGeneFixtures();
 
 // run application with defined routes, pass it store as property
 Router.run(routes,  HistoryLocation, function (Handler) {

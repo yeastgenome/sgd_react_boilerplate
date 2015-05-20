@@ -4,6 +4,7 @@ var $ = require("jquery");
 Backbone.$ = $;
 
 var GeneModel = Backbone.Model.extend({
+	idAttribute: "_id",
 	urlRoot: "/api/genes",
 	url: function () {
 		return `${this.urlRoot}/${this.id}`;
@@ -16,7 +17,7 @@ var GeneCollection = Backbone.Collection.extend({
 	addFixtures: function () {
 		var _initValues = [
 			{
-			  id: 1,
+			  _id: 1,
 			  name: "POLG"
 			}
 		];

@@ -7,6 +7,7 @@ var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
 var Index = require("./routes/index.jsx");
 var GeneShow = require("./routes/genes/show.jsx");
 var NotFound = require("./routes/not_found.jsx");
+var Search = require("./routes/search.jsx");
 
 // define layout and yield to RouteHandler
 
@@ -32,6 +33,9 @@ var App = React.createClass({
                 <input type="text" className="form-control search-textbar" placeholder="gene name, disease..." />
                 <input type="submit" className="btn btn-info" value="Search" />
               </form>
+              <ul className="nav navbar-nav navbar-left">
+                <li><Link to="index"><span className="glyphicon glyphicon-home"></span> Home</Link></li>
+              </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li><a href="#"><span className="glyphicon glyphicon-info-sign"></span> About</a></li>
                 <li><a href="#"><span className="glyphicon glyphicon-question-sign"></span> Help</a></li>
@@ -60,8 +64,12 @@ module.exports = (
       name="index" handler={Index}
     />
     <Route
-      name="gene" path="gene/:id"
+      name="gene" path="gene/:_id"
       handler={GeneShow}
+    />
+    <Route
+      name="search" path="search"
+      handler={Search}
     />
     <NotFoundRoute handler={NotFound}/>
   </Route>

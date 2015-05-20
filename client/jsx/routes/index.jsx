@@ -9,8 +9,9 @@ module.exports = React.createClass({
 		};
 		return (
 			<div>
-				<h1>#Index</h1>
-				 <Link to="gene" params={gene}>Exmple Gene</Link>
+				<Link to="search">
+					<h1>Search</h1>
+				</Link>
 			</div>
 		);
 	}

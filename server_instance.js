@@ -9,8 +9,9 @@ var ASSET_URL = process.env.ASSET_URL || "/assets";
 // prepare to import jsx modules
 require("node-jsx").install({ harmony: true });
 
-// store
 var ApplicationStore = require("./client/jsx/store/application_store.jsx");
+var API = require("./api");
+
 // setup data store
 var store = new ApplicationStore();
 // TEMP set fixtures
@@ -44,6 +45,9 @@ if (process.env.ENV !== "PRODUCTION") {
 	app.use("/assets", express.static("build"));
 }
 
+// custom API
+app.use("/api", API)
+// react handles this part
 app.get("*", renderReactApplication);
 
 module.exports = app;
