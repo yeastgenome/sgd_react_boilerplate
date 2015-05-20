@@ -9,8 +9,10 @@ var GeneShow = require("./routes/genes/show.jsx");
 var NotFound = require("./routes/not_found.jsx");
 var Search = require("./routes/search.jsx");
 
-// define layout and yield to RouteHandler
+// helper comonents
+var SearchBar = require("./routes/components/search_bar.jsx");
 
+// define layout and yield to RouteHandler
 var App = React.createClass({
   render () {
     return (
@@ -29,10 +31,7 @@ var App = React.createClass({
               </button>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
-              <form className="navbar-form navbar-right">
-                <input type="text" className="form-control search-textbar" placeholder="gene name, disease..." />
-                <input type="submit" className="btn btn-info" value="Search" />
-              </form>
+              <SearchBar store={this.props.store}/>
               <ul className="nav navbar-nav navbar-left">
                 <li><Link to="index"><span className="glyphicon glyphicon-home"></span> Home</Link></li>
               </ul>

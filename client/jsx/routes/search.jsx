@@ -26,6 +26,29 @@ var Search = React.createClass({
   },
 
   componentDidMount: function () {
+    // read query into store from URL param
+    this._setQueryFromURL()
+
+    // run search
+    this._fetchSearchResults();
+  },
+
+  componentDidUpdate: function (nextProps, nextState) {
+    var newQuery = this.context.getCurrentQuery().q || "";
+    var oldQuery = this.props.store.getQuery();
+    // if query changed, set and re-fetch
+    if (oldQuery !== newQuery) {
+      this._setQueryFromURL();
+      this._fetchSearchResults();
+    }
+  },
+
+  _setQueryFromURL: function () {
+    var query = this.context.getCurrentQuery().q || "";
+    this.props.store.setQuery(query);
+  },
+
+  _fetchSearchResults: function () {
     this.props.store.fetchSearchResults( (err, _results) => {
       if (this.isMounted()) {
         this.forceUpdate();
@@ -48,8 +71,11 @@ var Search = React.createClass({
   _getResultsTextNode: function () {
     var results = this.props.store.getSearchResults();
     var total = this.props.store.getSearchTotal();
+    var query = this.props.store.getQuery();
+    var queryDesciptionString = (query === "") ? "items." : `results for "${query}."`
+
     return (
-      <h3>Showing {results.length} of {total.toLocaleString()} items.</h3>
+      <h3>Showing {results.length} of {total.toLocaleString()} {queryDesciptionString}</h3>
     );
 
   },

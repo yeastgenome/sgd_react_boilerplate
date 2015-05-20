@@ -37,7 +37,8 @@ API.get("/gene/:id", function (req, res, next) {
 
 API.get("/search", function (req, res, next) {
 	var urlParts = url.parse(req.url, true);
-	var query = urlParts.query.q;
+	var queryParams = urlParts.query;
+	var query = (queryParams.q || "").toLowerCase();
 
 	var queryBody;
 	if (query === "") {
@@ -45,9 +46,11 @@ API.get("/search", function (req, res, next) {
 	      "match_all" : {}
 	    }
 	} else {
-		// TODO
 		queryBody = {
-	      "match_all" : {}
+			'fuzzy_like_this': {
+				'fields': ['name', 'sgdid'],
+				'like_text': query
+			}
 	    }
 	}
 

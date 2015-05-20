@@ -42,7 +42,7 @@ module.exports = class ApplicationStore {
 
   // callback(err, results)
   fetchSearchResults (callback) {
-  	var url = SEARCH_BASE_URL + "?query=" + _query;
+  	var url = SEARCH_BASE_URL + "?q=" + _query;
   	$.getJSON(url, data => {
   		_searchResults = data.results;
   		_totalResults = data.total;
@@ -58,5 +58,13 @@ module.exports = class ApplicationStore {
 
   getSearchTotal () {
   	return _totalResults;
+  }
+
+  getQuery () {
+    return _query;
+  }
+
+  setQuery (query) {
+    _query  = query;
   }
 };

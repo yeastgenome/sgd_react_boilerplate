@@ -13,8 +13,12 @@ var Show = React.createClass({
       return null;
     }
     return (
-      <div>
-        <h1>{gene.get("name")}</h1>
+      <div className="row">
+        <div>
+        </div>
+        <div>
+          <h1>{gene.get("name")}</h1>
+        </div>
       </div>
     );
   },
