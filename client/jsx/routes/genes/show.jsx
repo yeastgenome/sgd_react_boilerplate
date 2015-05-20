@@ -14,9 +14,20 @@ var Show = React.createClass({
     }
     return (
       <div className="row">
-        <div>
+        <div className="col-sm-2 hidden-sm hidden-xs">
+          <ul className="nav sidebar-nav affix">
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Orthologs</a></li>
+            <li><a href="#">Disease</a></li>
+            <li><a href="#">Sequence</a></li>
+          
+            <li><a href="#">Protein</a></li>
+            <li><a href="#">Function</a></li>
+            <li><a href="#">Interactions</a></li>
+            <li><a href="#">Literature</a></li>
+          </ul>
         </div>
-        <div>
+        <div className="col-sm-10 main">
           <h1>{gene.get("name")}</h1>
         </div>
       </div>
