@@ -3,7 +3,6 @@ var React = require('react');
 var Router = require('react-router');
 var { Link } = Router;
 
-
 var Layout = React.createClass({
   render () {
     return (

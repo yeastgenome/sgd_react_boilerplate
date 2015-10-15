@@ -6,25 +6,24 @@ var BUILD_PATH = "build";
 module.exports = function (grunt) {
 
   grunt.initConfig({
-
     browserify: {
-    	build: {
-	        dest: BUILD_PATH + "/js/application.js",
-	        src: SRC_PATH + "/jsx/app.jsx",
-	        options: {
-	        	debug: true
-	        }	
-    	}
+      build: {
+          dest: BUILD_PATH + "/js/application.js",
+          src: SRC_PATH + "/jsx/browser_bundle.jsx",
+          options: {
+            debug: true
+          } 
+      }
     },
 
     connect: {
-		server: {
-			options: {
-				port: 3000,
-				base: BUILD_PATH
-			}
-		}
-	},
+      server: {
+        options: {
+          port: 3000,
+          base: BUILD_PATH
+        }
+      }
+    },
       
     watch: {
       files: ["client/jsx/**/*.jsx"],
