@@ -1,6 +1,13 @@
 #Install and Start
 
-With node and grunt installed, clone repo, enter directory and install dependencies with npm by running
+## Global Installations
+
+Install node and NPM, and then make some global NPM installations, including grunt-cli and browserify
+
+	$ npm install -g grunt-cli
+	$ npm install -g browserify
+
+With node, grunt, and browserify installed, clone repo, enter directory and install dependencies with npm by running
 
     $ npm install
 

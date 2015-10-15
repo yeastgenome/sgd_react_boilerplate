@@ -23,7 +23,6 @@
     "browserify": "~2.3.0",
     "browserify-shim": "*",
     "reactify": "~1.0.0",
-    "backbone": "*",
     "jquery": "*"
   }
 }
