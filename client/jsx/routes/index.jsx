@@ -5,11 +5,7 @@ var { Route, DefaultRoute, RouteHandler, Link } = Router;
 module.exports = React.createClass({
 	render () {
 		return (<div>
-			<h1>Welcome to the SGD Curation Center</h1>
-			<div>
-				<span className="glyphicon glyphicon-list"> <Link to="papers">Papers</Link></span>
-				<hr />
-			</div>
+			<h1>Edit me in client/jsx/routes/index.jsx</h1>
 		</div>);
 	}
 });

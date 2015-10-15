@@ -4,6 +4,7 @@ var Router = require('react-router');
 var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 // require route handlers
+var Layout = require("./layout.jsx");
 var Index = require("./routes/index.jsx");
 var PapersIndex = require("./routes/papers/index.jsx");
 var PaperShow = require("./routes/papers/show.jsx");
@@ -12,23 +13,9 @@ var PaperShow = require("./routes/papers/show.jsx");
 var App = React.createClass({
   render () {
     return (
-      <div>
-        <div className="row">
-          <div className="col-sm-3 main">
-            <ul className="nav nav-pills nav-stacked">
-              <li>
-                <Link to="index">Home</Link>
-              </li>
-              <li>
-                <Link to="papers">Papers</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-9 main">
-            <RouteHandler {...this.props}/>
-          </div>
-        </div>
-      </div>
+      <Layout>
+        <RouteHandler {...this.props}/>
+      </Layout>
     );
   }
 });
