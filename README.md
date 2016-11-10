@@ -8,6 +8,6 @@ start the development task
 
 	$ npm start
 
-go to `http://localhost:2992/webpack-dev-server/`
+go to `http://localhost:8080/webpack-dev-server/`
 
 SGD Stanford University
