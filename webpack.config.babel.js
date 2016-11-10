@@ -1,8 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import BundleTracker from 'webpack-bundle-tracker';
+// import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 let isProduction = process.env.NODE_ENV === 'production';
 
@@ -12,16 +11,15 @@ const rootAssetPath = './assets';
 const buildOutputPath = './src/build';
 
 let config = {
-  context: path.join(__dirname, 'src/js_src'),
+  context: path.join(__dirname, 'src'),
   debug: true,
   entry: [
     './index.js'
   ],
   output: {
-    path: buildOutputPath,
-    publicPath: publicHost + '/assets/',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].js'
+    path: path.resolve(__dirname, 'build/prod/assets'),
+    publicPath: '/assets/',
+    filename: 'bundle.js'
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -58,11 +56,7 @@ let config = {
         loader: 'url?limit=100000'
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin('[name].[chunkhash].css'),
-    new BundleTracker({ filename: buildOutputPath + '/stats.json' })
-  ]
+  }
 };
 
 if (isProduction) {
@@ -74,8 +68,7 @@ if (isProduction) {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new ExtractTextPlugin('[name].[chunkhash].css'),
-    new BundleTracker({ filename: buildOutputPath + '/stats.json' })
+    new ExtractTextPlugin('[name].[chunkhash].css')
   ]
 }
 

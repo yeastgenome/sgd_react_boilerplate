@@ -20,8 +20,7 @@
     "react-select": "^1.0.0-rc.2",
     "redux": "^3.6.0",
     "reselect": "^2.5.4",
-    "underscore": "^1.8.3",
-    "webpack-bundle-tracker": "0.0.93"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
