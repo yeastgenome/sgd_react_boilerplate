@@ -10,17 +10,17 @@ class Layout extends Component {
         <nav className='navbar navbar-inverse navbar-fixed-top'>
           <div className='container-fluid'>
             <div className='navbar-header'>
-              <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar'>
+              <button aria-controls='navbar' aria-expanded='false' className='navbar-toggle collapsed' data-target='#navbar' data-toggle='collapse' type='button'>
                 <span className='sr-only'>Toggle navigation</span>
-                <span className='icon-bar'></span>
-                <span className='icon-bar'></span>
-                <span className='icon-bar'></span>
+                <span className='icon-bar' />
+                <span className='icon-bar' />
+                <span className='icon-bar' />
               </button>
               <a className='navbar-brand' href='#'>Home</a>
             </div>
-            <div id='navbar' className='navbar-collapse collapse'>
+            <div className='navbar-collapse collapse' id='navbar'>
               <form className='navbar-form navbar-right'>
-                <input type='text' className='form-control' placeholder='Search...' />
+                <input className='form-control' placeholder='Search...' type='text' />
               </form>
             </div>
           </div>
@@ -51,8 +51,8 @@ class Layout extends Component {
   }
 }
 
-Layout.proptypes = {
-  children: React.PropTypes.array
+Layout.propTypes = {
+  children: React.PropTypes.object
 };
 
 export default Layout;

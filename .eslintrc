@@ -16,6 +16,7 @@
     "react"
   ],
   "rules": {
+    "no-undef": "off",
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -28,7 +29,6 @@
     "react/no-direct-mutation-state": 1,
     "react/no-is-mounted": 1,
     "react/no-multi-comp": 1,
-    "react/no-set-state": 1,
     "react/no-unknown-property": 1,
     "react/prefer-es6-class": 1,
     "react/prefer-stateless-function": 0,

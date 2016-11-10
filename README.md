@@ -1,25 +1,13 @@
 #Install and Start
 
-### Global Installations
-
-Install node and NPM, and then make some global NPM installations, including grunt-cli and browserify
-
-	$ npm install -g grunt-cli
-	$ npm install -g browserify
-
-
-### Local Installations
-With node, grunt, and browserify installed, clone repo, enter directory and install dependencies with npm by running
-
-    $ npm install
+## With node.js installed
+	$ npm install
 
 ### Start
-start the development grun task
+start the development task
 
-	$ grunt
+	$ npm start
 
-go to http://localhost:3000
-
-turn on live reload to automatically reload js build changes.
+go to `http://localhost:2992/webpack-dev-server/`
 
 SGD Stanford University
