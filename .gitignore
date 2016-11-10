@@ -3,3 +3,4 @@ build/js/application.js
 node_modules/*
 npm-debug.log
 .sass-cache/*
+.tmp
