@@ -15,6 +15,7 @@ class PapersShow extends Component {
   fetchPaperData() {
     let paperId = this.props.params.id;
     var _url = `http://www.yeastgenome.org/webservice/reference/${paperId}/overview`;
+    // depends on global $
     $.ajax({
       url: _url,
       dataType: 'JSONP',
