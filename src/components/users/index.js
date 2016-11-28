@@ -6,15 +6,14 @@ class UsersIndex extends Component {
   
   constructor(props) {
     super(props);
-    // this.state = {
-    //   userDetails: userList,
+    this.state = {
+      userDetails: userList,
 
-    // };
+    };
   }
 
   renderUserList () {
-    // console.log(this.state.userDetails);
-    let listUsers = userList.map( (u) => {
+    let listUsers = this.state.userDetails.map( (u) => {
       return (
         <tr key={u.email}>
           <td>{u.username}</td> <hr/>
@@ -32,9 +31,16 @@ class UsersIndex extends Component {
     return (
       <div>
         <h1>Users</h1>
-            <p>Username</p>
-            <p>Email</p> 
-          {this.renderUserList()}
+          <table styles="width:100%">
+            <thead>
+              <tr>
+                <th>Username</th> <hr/>
+                <th>Email</th>
+              </tr>
+            </thead>
+            {this.renderUserList()}
+          </table>   
+          
       </div>
     );
   }
