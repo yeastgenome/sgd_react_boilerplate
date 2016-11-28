@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router';
 import userList from '../data/userData';
 
 class UsersIndex extends Component {
@@ -12,6 +11,7 @@ class UsersIndex extends Component {
     };
   }
 
+  // creates a list od user details formatted to be displayed by render function
   renderUserList () {
     let listUsers = this.state.userDetails.map( (u) => {
       return (

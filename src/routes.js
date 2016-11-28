@@ -13,6 +13,7 @@ export default (
     <IndexRoute component={Home} />
     <Route component={PapersIndex} path='papers' />
     <Route component={PapersShow} path="papers/:id" />
+    // added route comopnent for /users 
     <Route component={UsersIndex} path="users" />
     {/* <Route component={Example} path='example' /> */}
   </Route>
