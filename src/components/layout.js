@@ -37,6 +37,9 @@ class Layout extends Component {
                     <li>
                       <Link to='papers'>Papers</Link>
                     </li>
+                    <li>
+                      <Link to='users'>Users</Link>
+                    </li>
                   </ul>
                 </div>
                 <div className='col-sm-10 main'>

@@ -5,6 +5,7 @@ import Home from './components/home';
 import Layout from './components/layout';
 import PapersIndex from './components/papers';
 import PapersShow from './components/papers/show';
+import UsersIndex from './components/users';
 // import Example from './components/example';
 
 export default (
@@ -12,6 +13,8 @@ export default (
     <IndexRoute component={Home} />
     <Route component={PapersIndex} path='papers' />
     <Route component={PapersShow} path="papers/:id" />
+    <Route component={UsersIndex} path="users" />
     {/* <Route component={Example} path='example' /> */}
   </Route>
+  
 );

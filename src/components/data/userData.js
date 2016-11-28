@@ -1,4 +1,5 @@
-export default [
+
+var userList = [
   {
     username: 'user123',
     email: 'john@stanford.edu'
@@ -12,3 +13,5 @@ export default [
     email: 'john@stanford.edu'
   }
 ];
+
+export default userList;
