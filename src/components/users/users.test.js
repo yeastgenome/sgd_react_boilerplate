@@ -17,4 +17,13 @@ describe('UsersIndex', () => {
   it('should be able to render one <h1> node', () => {
     assert.equal(children[0].type, 'h1');
   });
+
+  //getting the table element
+  const tableElement = children[1];
+  // getting the data rows within the table
+  const dataElements = tableElement.props.children[1];
+  it('should have the 4 child nodes', () => {
+    assert.equal(dataElements.length, 3);
+  });
+
 });

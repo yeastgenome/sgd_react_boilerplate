@@ -46,15 +46,4 @@ class UsersIndex extends Component {
   }
 }
 
-// <div>
-//         <h1>Users</h1>
-//         // <table style="width:100%">
-//         //   <tr>
-//             // <p>Username<p>
-//             // <p>Email</p> 
-//           // </tr>
-//           {this.renderUserList()}
-//         // </table>
-//       </div>
-
 export default UsersIndex;
