@@ -62,7 +62,7 @@ class ReferencesIndex extends Component {
           </table>   
           
       </div>*/}
-      {this.renderReferList()}
+      {/*this.renderReferList()*/}
       </div>
     );
   }
