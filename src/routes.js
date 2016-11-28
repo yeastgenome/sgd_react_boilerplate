@@ -6,6 +6,7 @@ import Layout from './components/layout';
 import PapersIndex from './components/papers';
 import PapersShow from './components/papers/show';
 import UsersIndex from './components/users';
+import ReferencesIndex from './components/references';
 // import Example from './components/example';
 
 export default (
@@ -15,6 +16,7 @@ export default (
     <Route component={PapersShow} path="papers/:id" />
     // added route comopnent for /users 
     <Route component={UsersIndex} path="users" />
+    <Route component={ReferencesIndex} path="references" />
     {/* <Route component={Example} path='example' /> */}
   </Route>
   

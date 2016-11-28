@@ -37,9 +37,11 @@ class Layout extends Component {
                     <li>
                       <Link to='papers'>Papers</Link>
                     </li>
-                    // added users link in layout.js
                     <li>
                       <Link to='users'>Users</Link>
+                    </li>
+                    <li>
+                      <Link to='references'>References</Link>
                     </li>
                   </ul>
                 </div>
